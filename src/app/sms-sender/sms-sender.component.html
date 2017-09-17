@@ -1,0 +1,13 @@
+<div>
+  <div>Current time <p>{{ currentTime }}</p></div>
+  <div>Send in (s) <input [ngModel]="sendIn" (ngModelChange)="onSendInChange($event)"/></div>
+  <div>Message will be sent at {{ sendingTime }}</div>
+  <div>Phone number <input [(ngModel)]="phoneNumber" /></div>
+  <div>Text<textarea [(ngModel)]="text"></textarea></div>
+  <div>Sending enabled </div>
+  <div><input type="radio" [(ngModel)]="sendingEnabled" (ngModelChange)="alreadySent = false" name="sendingEnabled" [value]="true">Yes<br></div>
+  <div><input type="radio" [(ngModel)]="sendingEnabled" (ngModelChange)="alreadySent = false" name="sendingEnabled" [value]="false">No<br></div>
+  <div>{{sendingEnabled}}</div>
+
+  <p *ngIf="alreadySent">Message sent</p>
+</div>
